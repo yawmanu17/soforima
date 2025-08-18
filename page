@@ -29,6 +29,29 @@
             width: 2px;
             background: #0073e6;
         }
+        .media-upload-container {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .media-upload-btn {
+            border: 2px dashed #0073e6;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .media-upload-btn:hover {
+            background-color: rgba(0, 115, 230, 0.1);
+        }
+        .media-preview {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -122,25 +145,112 @@
                 <p class="text-gray-600 max-w-2xl mx-auto">Key research projects and technical achievements</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300">
+                    <div class="relative">
+                        <div id="project1-media" class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img id="project1-image-preview" class="media-preview w-full h-full object-cover" alt="Project 1">
+                            <video id="project1-video-preview" class="media-preview w-full h-full" controls style="display:none;"></video>
+                            <div id="project1-placeholder" class="text-center p-4">
+                                <i class="fas fa-image text-4xl text-gray-400 mb-2"></i>
+                                <p class="text-gray-500">No media uploaded</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-4 flex space-x-2">
+                            <label for="project1-image-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-camera text-blue-600"></i>
+                                <input type="file" id="project1-image-upload" accept="image/*" class="hidden" onchange="previewProjectMedia(this, 'project1', 'image')">
+                            </label>
+                            <label for="project1-video-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-video text-blue-600"></i>
+                                <input type="file" id="project1-video-upload" accept="video/*" class="hidden" onchange="previewProjectMedia(this, 'project1', 'video')">
+                            </label>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Smart Process Control System for Water Filtration Optimization</h3>
                         <p class="text-gray-600 mb-4">Prototyped at BWWB Shades Mountain Filter Plant.</p>
                     </div>
                 </div>
+
+                <!-- Project 2 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300">
+                    <div class="relative">
+                        <div id="project2-media" class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img id="project2-image-preview" class="media-preview w-full h-full object-cover" alt="Project 2">
+                            <video id="project2-video-preview" class="media-preview w-full h-full" controls style="display:none;"></video>
+                            <div id="project2-placeholder" class="text-center p-4">
+                                <i class="fas fa-image text-4xl text-gray-400 mb-2"></i>
+                                <p class="text-gray-500">No media uploaded</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-4 flex space-x-2">
+                            <label for="project2-image-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-camera text-blue-600"></i>
+                                <input type="file" id="project2-image-upload" accept="image/*" class="hidden" onchange="previewProjectMedia(this, 'project2', 'image')">
+                            </label>
+                            <label for="project2-video-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-video text-blue-600"></i>
+                                <input type="file" id="project2-video-upload" accept="video/*" class="hidden" onchange="previewProjectMedia(this, 'project2', 'video')">
+                            </label>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Power Factor Correction & Load Analysis App</h3>
                         <p class="text-gray-600 mb-4">Presented at AL/MS Water Conference, Mobile AL, 2025.</p>
                     </div>
                 </div>
+
+                <!-- Project 3 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300">
+                    <div class="relative">
+                        <div id="project3-media" class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img id="project3-image-preview" class="media-preview w-full h-full object-cover" alt="Project 3">
+                            <video id="project3-video-preview" class="media-preview w-full h-full" controls style="display:none;"></video>
+                            <div id="project3-placeholder" class="text-center p-4">
+                                <i class="fas fa-image text-4xl text-gray-400 mb-2"></i>
+                                <p class="text-gray-500">No media uploaded</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-4 flex space-x-2">
+                            <label for="project3-image-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-camera text-blue-600"></i>
+                                <input type="file" id="project3-image-upload" accept="image/*" class="hidden" onchange="previewProjectMedia(this, 'project3', 'image')">
+                            </label>
+                            <label for="project3-video-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-video text-blue-600"></i>
+                                <input type="file" id="project3-video-upload" accept="video/*" class="hidden" onchange="previewProjectMedia(this, 'project3', 'video')">
+                            </label>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Pyrolysis of Waste Tires & Plastics</h3>
                         <p class="text-gray-600 mb-4">Converted waste into fuel gas, liquid, and char with fuel emulsification for reduced emissions.</p>
                     </div>
                 </div>
+
+                <!-- Project 4 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300">
+                    <div class="relative">
+                        <div id="project4-media" class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img id="project4-image-preview" class="media-preview w-full h-full object-cover" alt="Project 4">
+                            <video id="project4-video-preview" class="media-preview w-full h-full" controls style="display:none;"></video>
+                            <div id="project4-placeholder" class="text-center p-4">
+                                <i class="fas fa-image text-4xl text-gray-400 mb-2"></i>
+                                <p class="text-gray-500">No media uploaded</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-4 flex space-x-2">
+                            <label for="project4-image-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-camera text-blue-600"></i>
+                                <input type="file" id="project4-image-upload" accept="image/*" class="hidden" onchange="previewProjectMedia(this, 'project4', 'image')">
+                            </label>
+                            <label for="project4-video-upload" class="cursor-pointer bg-white p-2 rounded-full shadow-md hover:bg-gray-100">
+                                <i class="fas fa-video text-blue-600"></i>
+                                <input type="file" id="project4-video-upload" accept="video/*" class="hidden" onchange="previewProjectMedia(this, 'project4', 'video')">
+                            </label>
+                        </div>
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Web Design & Management</h3>
                         <p class="text-gray-600 mb-4">Designed and managed websites for organizations in Europe and the US.</p>
@@ -315,14 +425,17 @@
                                 <a href="https://www.linkedin.com/in/solomon-ofori-manu-789213155" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500" target="_blank">
                                     <i class="fab fa-linkedin-in text-white text-xl"></i>
                                 </a>
-                                <a href="#" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500">
+                                <a href="https://twitter.com/yourusername" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500" target="_blank">
                                     <i class="fab fa-twitter text-white text-xl"></i>
                                 </a>
-                                <a href="#" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500">
+                                <a href="https://github.com/yourusername" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500" target="_blank">
                                     <i class="fab fa-github text-white text-xl"></i>
                                 </a>
-                                <a href="#" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500">
+                                <a href="https://www.researchgate.net/profile/yourprofile" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500" target="_blank">
                                     <i class="fab fa-researchgate text-white text-xl"></i>
+                                </a>
+                                <a href="https://www.youtube.com/yourchannel" class="social-icon w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-500" target="_blank">
+                                    <i class="fab fa-youtube text-white text-xl"></i>
                                 </a>
                             </div>
                         </div>
@@ -373,14 +486,17 @@
                     <a href="https://www.linkedin.com/in/solomon-ofori-manu-789213155" class="text-gray-400 hover:text-white transition" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://twitter.com/yourusername" class="text-gray-400 hover:text-white transition" target="_blank">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://github.com/yourusername" class="text-gray-400 hover:text-white transition" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://www.researchgate.net/profile/yourprofile" class="text-gray-400 hover:text-white transition" target="_blank">
                         <i class="fab fa-researchgate"></i>
+                    </a>
+                    <a href="https://www.youtube.com/yourchannel" class="text-gray-400 hover:text-white transition" target="_blank">
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
@@ -394,6 +510,7 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
         // Profile image upload preview
         function previewProfileImage(input) {
             if (input.files && input.files[0]) {
@@ -404,15 +521,42 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        // Project video upload preview
-        function previewProjectVideo(input, projectNumber) {
+
+        // Project media upload preview
+        function previewProjectMedia(input, projectId, mediaType) {
             if (input.files && input.files[0]) {
-                const video = document.querySelector(`#projects .project-card:nth-child(${projectNumber}) video`);
-                const source = video.querySelector('source');
-                source.src = URL.createObjectURL(input.files[0]);
-                video.load();
+                const mediaContainer = document.getElementById(`${projectId}-media`);
+                const placeholder = document.getElementById(`${projectId}-placeholder`);
+                const imagePreview = document.getElementById(`${projectId}-image-preview`);
+                const videoPreview = document.getElementById(`${projectId}-video-preview`);
+
+                // Hide placeholder
+                placeholder.style.display = 'none';
+
+                if (mediaType === 'image') {
+                    // Hide video preview if showing
+                    videoPreview.style.display = 'none';
+                    videoPreview.pause();
+                    
+                    // Show and update image preview
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        imagePreview.src = e.target.result;
+                        imagePreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                } else if (mediaType === 'video') {
+                    // Hide image preview if showing
+                    imagePreview.style.display = 'none';
+                    
+                    // Show and update video preview
+                    const videoURL = URL.createObjectURL(input.files[0]);
+                    videoPreview.src = videoURL;
+                    videoPreview.style.display = 'block';
+                }
             }
         }
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -425,6 +569,24 @@
                 }
             });
         });
+
+        // Form submission handling
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send the form data to a server
+                // For demo purposes, we'll just show an alert
+                alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon at ${email}.`);
+                
+                // Reset the form
+                contactForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
