@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .gradient-bg {
-            background: linear-gradient(135deg, #0073e6 0%, #00a1ff 100%);
+            background: linear-gradient(135deg, #0073ed 0%, #00a1ff 100%);
         }
         .project-card:hover {
             transform: translateY(-5px);
@@ -352,9 +352,9 @@
                     <h3 class="text-xl font-bold text-gray-800">Certifications & Licenses</h3>
                     <ul class="list-disc ml-6 text-gray-600">
                         <li>Project Management Professional (PMP) <a href="https://www.credly.com/badges/47d3c18f-8390-4303-9b90-3caebcf2ca8e/linked_in_profile" class="text-blue-600 underline" target="_blank">View Credential</a></li>
-                        <li>Construction Document Technologist (CDT)</li>
+                        <li>Construction Document Technologist (CDT) <a href="https://www.credly.com/badges/8b199064-9b31-49c3-9c8e-85f6dc319eb2/linked_in?t=szyqzo" class="text-blue-600 underline" target="_blank">View Credential</a></li>
                         <li>National Career Readiness Certificate (ID: CHSV1V1BGJYX)</li>
-                        <li>OSHA 10</li>
+                        <li>OSHA 10- Hour General Industry <a href="https://www.oshacardportal.com/portalapp/verify/d537f641-059e-4afe-a662-f78877dff862" class="text-blue-600 underline" target="_blank">View Credential</a></li>
                         <li>Alabama Certified Employee – Alabama Career Essentials</li>
                     </ul>
                 </div>
