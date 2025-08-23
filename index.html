@@ -30,21 +30,26 @@
             background: #7c3aed;
         }
         .media-preview {
-            max-width: 100%;
-            max-height: 300px;
-            object-fit: contain;
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(124,58,237,0.08);
         }
         .project-media-area {
-            min-height: 180px;
+            min-height: 300px;
+            height: 320px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            background: #f3f4f6;
         }
-        .project-media-area video,
-        .project-media-area img {
-            display: block;
+        .project-media-area video {
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
             border-radius: 0.5rem;
             box-shadow: 0 2px 8px rgba(124,58,237,0.08);
         }
@@ -62,7 +67,6 @@
         .upload-btn:hover {
             background: #7c3aed;
         }
-        
         .project-icon {
             position: absolute;
             top: 12px;
@@ -142,7 +146,7 @@
                     <div>
                         <h2 class="text-3xl font-bold text-gray-800 mb-6">About Me</h2>
                         <p class="text-gray-600 mb-6 leading-relaxed">
-                            Multidisciplinary engineer with expertise in water/wastewater, petrochemicals, process optimization, and environmental sustainability. Specializing in industrial control, automation, and system design.
+                            Multidisciplinary engineer with expertise in water/wastewater, petrochemicals, process optimization, and environmental sustainability. Specializing in industrial control, automation, and cloud solutions.
                         </p>
                         <div class="flex flex-wrap gap-4">
                             <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">Data Analysis</div>
@@ -281,9 +285,9 @@
                 <!-- Project 1 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300 relative">
                     <span class="project-icon"><i class="fas fa-water"></i></span>
-                    <div class="project-media-area relative h-84 bg-gray-200">
-                        <img id="project1-image" src="IMG_4711.jpeg" alt="Project 1 Image" class="media-preview w-full h-40 object-cover mb-2" style="display:block;">
-                        <video id="project1-video" class="w-full h-40 object-cover" controls style="display:none;">
+                    <div class="project-media-area relative">
+                        <img id="project1-image" src="IMG_4711.jpeg" alt="Project 1 Image" class="media-preview" style="display:block;">
+                        <video id="project1-video" class="media-preview" controls style="display:none;">
                             <source id="project1-video-source" src="" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -306,9 +310,9 @@
                 <!-- Project 2 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300 relative">
                     <span class="project-icon"><i class="fas fa-bolt"></i></span>
-                    <div class="project-media-area relative h-84 bg-gray-200">
-                        <img id="project2-image" src="po.jpg" alt="Project 2 Image" class="media-preview w-full h-40 object-cover mb-2" style="display:block;">
-                        <video id="project2-video" class="w-full h-40 object-cover" controls style="display:none;">
+                    <div class="project-media-area relative">
+                        <img id="project2-image" src="po.jpg" alt="Project 2 Image" class="media-preview" style="display:block;">
+                        <video id="project2-video" class="media-preview" controls style="display:none;">
                             <source id="project2-video-source" src="" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -331,9 +335,9 @@
                 <!-- Project 3 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300 relative">
                     <span class="project-icon"><i class="fas fa-recycle"></i></span>
-                    <div class="project-media-area relative h-84 bg-gray-200">
-                        <img id="project3-image" src="Image (2).jpg" alt="Project 3 Image" class="media-preview w-full h-40 object-cover mb-2" style="display:block;">
-                        <video id="project3-video" class="w-full h-40 object-cover" controls style="display:none;">
+                    <div class="project-media-area relative">
+                        <img id="project3-image" src="Image (2).jpg" alt="Project 3 Image" class="media-preview" style="display:block;">
+                        <video id="project3-video" class="media-preview" controls style="display:none;">
                             <source id="project3-video-source" src="" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -356,9 +360,9 @@
                 <!-- Project 4 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-md project-card transition duration-300 relative">
                     <span class="project-icon"><i class="fas fa-globe"></i></span>
-                    <div class="project-media-area relative h-84 bg-gray-200">
-                        <img id="project4-image" src="obj.png" alt="Project 4 Image" class="media-preview w-full h-40 object-cover mb-2" style="display:block;">
-                        <video id="project4-video" class="w-full h-40 object-cover" controls style="display:none;">
+                    <div class="project-media-area relative">
+                        <img id="project4-image" src="obj.png" alt="Project 4 Image" class="media-preview" style="display:block;">
+                        <video id="project4-video" class="media-preview" controls style="display:none;">
                             <source id="project4-video-source" src="" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -395,15 +399,15 @@
                         <form class="space-y-6">
                             <div>
                                 <label for="name" class="block mb-2 font-medium">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-purple-700 border border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder:text-purple-300" placeholder="Enter your name">
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-purple-700 border border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-200" placeholder="Name" required>
                             </div>
                             <div>
                                 <label for="email" class="block mb-2 font-medium">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-purple-700 border border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder:text-purple-300" placeholder="Enter your email">
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-purple-700 border border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-200" placeholder="Email" required>
                             </div>
                             <div>
                                 <label for="message" class="block mb-2 font-medium">Your Message</label>
-                                <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-purple-700 border border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder:text-purple-300" placeholder="Type your message"></textarea>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-purple-700 border border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-200" placeholder="Type your message..." required></textarea>
                             </div>
                             <button type="submit" class="w-full bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">Send Message</button>
                         </form>
